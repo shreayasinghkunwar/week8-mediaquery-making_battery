@@ -163,6 +163,11 @@ async function mediaQuery() {
         batteryLevel.style.flexDirection = batteryStyle.flexDirection;
     }
 
+    // Adjust Footer //
+    let footer = adjustFooter(queryStatus);
+    document.querySelector(".footer").style.flexDirection = footer.flexDirection;
+    document.querySelector(".footer").style.gap = footer.gap;
+
 
 
 }
