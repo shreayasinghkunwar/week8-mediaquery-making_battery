@@ -142,6 +142,29 @@ async function mediaQuery() {
 
 
 
+    // //Change battery position according to viewport
+
+    let batteryStyle = adjustBatteryPosition(queryStatus, batteryPercent);
+    let battery = document.querySelector(".battery");
+
+    let batteryLevel = document.querySelector(".batteryLevel");
+    document.querySelector(".container").style.marginTop = batteryStyle.marginTop;
+    document.querySelector(".container").style.width = batteryStyle.containerWidth;
+    battery.style.height = batteryStyle.batteryHeight;
+    battery.style.width = batteryStyle.batteryWidth;
+    battery.style.transform = batteryStyle.rotateBatteryCase;
+    battery.style.margin = batteryStyle.batteryMargin;
+    batteryLevel.style.height = batteryStyle.batteryBarHeight;
+    batteryLevel.style.width = batteryStyle.batterybarWidth;
+    batteryLevel.style.transform = batteryStyle.rotateBattery;
+    document.querySelector(".container").style.flexDirection = batteryStyle.flexDirection
+    document.querySelector(".batterySide").style = batteryStyle.batterySideStyle
+    if (!chargeStatus) {
+        batteryLevel.style.flexDirection = batteryStyle.flexDirection;
+    }
+
+
+
 }
 
 
